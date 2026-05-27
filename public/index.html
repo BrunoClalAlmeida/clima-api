@@ -1,56 +1,54 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clima API — Integração de Sistemas N703</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b0d12" />
+  <title>Clima API — N703</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <div class="bg-decoration">
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
-  </div>
+  <div class="bg-decoration"></div>
 
   <nav class="navbar">
-    <div class="logo">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
-      </svg>
-      <span>Clima<strong>API</strong></span>
-    </div>
-    <div class="nav-info">
-      <span class="badge">N703 • v1.0.0</span>
-      <button class="theme-toggle" id="themeToggle" title="Alternar tema">
-        <svg class="icon-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-        <svg class="icon-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
+    <div class="navbar-inner">
+      <div class="logo">
+        <span class="logo-mark">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+          </svg>
+        </span>
+        <span>Clima<strong>API</strong></span>
+      </div>
+      <div class="nav-info">
+        <span class="badge">N703 · v1.0.0</span>
+        <button class="theme-toggle" id="themeToggle" title="Alternar tema" aria-label="Alternar tema">
+          <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
     </div>
   </nav>
 
   <header class="hero">
-    <div class="hero-content">
-      <span class="hero-tag">API de Agregação de Dados</span>
-      <h1>Dados climáticos e geográficos<br/><span class="gradient-text">em uma única chamada</span></h1>
-      <p class="hero-subtitle">Integração entre Brasil API (IBGE/CPTEC) e Open-Meteo. Consulte clima e cidades brasileiras com uma API REST padronizada.</p>
-      <div class="hero-stats">
-        <div class="stat"><strong id="statRequests">0</strong><span>requisições</span></div>
-        <div class="stat"><strong>3</strong><span>endpoints</span></div>
-        <div class="stat"><strong>6</strong><span>testes</span></div>
-      </div>
+    <span class="hero-tag">API de Agregação de Dados</span>
+    <h1>Dados climáticos e geográficos<br/><span class="gradient-text">em uma única chamada</span></h1>
+    <p class="hero-subtitle">Integração entre Brasil API (IBGE / CPTEC) e Open-Meteo. Consulte clima e cidades brasileiras com uma API REST padronizada.</p>
+    <div class="hero-stats">
+      <div class="stat"><strong id="statRequests">0</strong><span>requisições</span></div>
+      <div class="stat"><strong>3</strong><span>endpoints</span></div>
+      <div class="stat"><strong>6</strong><span>testes</span></div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- HEALTH -->
-    <section class="card glass" id="cardHealth">
+  <main class="shell">
+    <section class="card">
       <div class="card-head">
         <div class="card-icon icon-green">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
         </div>
         <div>
           <h2>Health Check</h2>
@@ -58,18 +56,19 @@
         </div>
       </div>
       <p class="card-desc">Verifica em tempo real se o serviço está disponível e operacional.</p>
-      <button class="btn btn-primary" id="btnHealth">
-        <span>Verificar Status</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </button>
+      <div class="input-group">
+        <button class="btn btn-primary" id="btnHealth" style="flex:1">
+          <span>Verificar Status</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
       <div id="healthResult" class="output"></div>
     </section>
 
-    <!-- CLIMA -->
-    <section class="card glass" id="cardClima">
+    <section class="card">
       <div class="card-head">
         <div class="card-icon icon-blue">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
         </div>
         <div>
           <h2>Consulta Climática</h2>
@@ -78,8 +77,8 @@
       </div>
       <p class="card-desc">Informe o nome da cidade. A aplicação obtém coordenadas dinamicamente.</p>
       <div class="input-group">
-        <div class="input-wrapper">
-          <svg class="input-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <div class="input-wrapper has-icon">
+          <svg class="input-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           <input type="text" id="inputCidade" placeholder="Ex: Fortaleza, São Paulo, Manaus..." autocomplete="off" />
         </div>
         <button class="btn btn-primary" id="btnClima">Consultar</button>
@@ -96,11 +95,10 @@
       <div id="climaResult" class="output"></div>
     </section>
 
-    <!-- CIDADES POR UF -->
-    <section class="card glass" id="cardCidades">
+    <section class="card">
       <div class="card-head">
         <div class="card-icon icon-purple">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4"/></svg>
         </div>
         <div>
           <h2>Cidades por Estado</h2>
@@ -109,13 +107,13 @@
       </div>
       <p class="card-desc">Lista municípios brasileiros a partir da sigla do estado.</p>
       <div class="input-group">
-        <div class="input-wrapper" style="max-width:140px">
-          <input type="text" id="inputUF" placeholder="UF" maxlength="2" autocomplete="off" style="text-transform:uppercase" />
+        <div class="input-wrapper compact">
+          <input type="text" id="inputUF" placeholder="UF" maxlength="2" autocomplete="off" style="text-transform:uppercase;text-align:center;font-weight:600;letter-spacing:2px" />
         </div>
-        <div class="input-wrapper" style="max-width:180px">
+        <div class="input-wrapper compact-md">
           <input type="number" id="inputLimite" placeholder="Limite" min="1" max="100" value="10" />
         </div>
-        <button class="btn btn-primary" id="btnCidades">Listar</button>
+        <button class="btn btn-primary" id="btnCidades">Listar Cidades</button>
       </div>
       <div class="chips">
         <span class="chip-label">Estados:</span>
@@ -133,10 +131,8 @@
   </main>
 
   <footer class="footer">
-    <div class="footer-content">
-      <div>
-        <strong>Clima API</strong> · Técnicas de Integração de Sistemas (N703)
-      </div>
+    <div class="footer-inner">
+      <div><strong>Clima API</strong> · Técnicas de Integração de Sistemas (N703)</div>
       <div class="footer-tech">
         <span>Node.js</span><span>Express</span><span>Axios</span><span>Jest</span>
       </div>

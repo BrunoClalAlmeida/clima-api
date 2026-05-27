@@ -112,6 +112,8 @@ async function buscarClima() {
       ? `${data.latitude.toFixed(3)}, ${data.longitude.toFixed(3)}`
       : "";
 
+    const unidade = (data.clima.unidades && data.clima.unidades.temperatura) || "C";
+
     out.innerHTML = `
       <div class="weather-card">
         <div class="weather-header">
@@ -124,11 +126,11 @@ async function buscarClima() {
         <div class="weather-temps">
           <div class="temp-box">
             <div class="temp-label">Mínima</div>
-            <div class="temp-value">${data.clima.temperatura_min}<sup>°${escapeHtml(data.clima.unidades?.temperatura || "C")}</sup></div>
+            <div class="temp-value">${data.clima.temperatura_min}<sup>°${escapeHtml(unidade)}</sup></div>
           </div>
           <div class="temp-box">
             <div class="temp-label">Máxima</div>
-            <div class="temp-value">${data.clima.temperatura_max}<sup>°${escapeHtml(data.clima.unidades?.temperatura || "C")}</sup></div>
+            <div class="temp-value">${data.clima.temperatura_max}<sup>°${escapeHtml(unidade)}</sup></div>
           </div>
         </div>
       </div>
@@ -172,12 +174,12 @@ async function listarCidades() {
       return;
     }
 
-    const items = data.cidades.map(c => `<div class="cidade-item">${escapeHtml(c.nome)}</div>`).join("");
+    const items = data.cidades.map(c => `<div class="cidade-item"><span>${escapeHtml(c.nome)}</span></div>`).join("");
 
     out.innerHTML = `
       <div class="cidades-header">
         <span class="success-badge">${data.quantidade_retornada} cidades</span>
-        <span style="color:var(--text-muted)">Estado: <strong style="color:var(--text)">${escapeHtml(data.uf)}</strong></span>
+        <span class="uf-info">Estado: <strong>${escapeHtml(data.uf)}</strong></span>
       </div>
       <div class="cidades-grid">${items}</div>
       ${jsonViewer(data)}`;
