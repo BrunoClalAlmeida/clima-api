@@ -1,6 +1,7 @@
 ﻿# Integrantes da Equipe
 
-| Nome Completo  | Matrícula | Papel                 |
-|----------------|-----------|-----------------------|
-| Fulano de Tal  | 0000000   | Desenvolvedor Backend |
-| Ciclano Silva  | 0000001   | Desenvolvedor Backend |
+| Nome Completo              | Matrícula | Papel                 |
+|----------------------------|-----------|-----------------------|
+| Arthur Alves Damasceno     | 2425112   | Desenvolvedor Backend |
+| Andreza Lívia Martins Rocha | 2415652   | Desenvolvedor Backend |
+| Bruno Clal de Almeida      | 2425038   | Desenvolvedor Backend |
