@@ -10,6 +10,7 @@ API REST que integra dados geográficos (IBGE via Brasil API) e climáticos (CPT
 - Andreza Lívia Martins Rocha — 2415652
 - Bruno Clal de Almeida — 2425038
 - Laís Dantas Ferreira — 2418863
+- Cristiano da Costa Silva — 2415527
 
 ## Tecnologias
 
