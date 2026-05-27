@@ -1,0 +1,15 @@
+﻿{
+  "info": {
+    "name": "Clima API - N703",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    { "name": "Health Check", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/health" } },
+    { "name": "Clima - Fortaleza", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/clima/Fortaleza" } },
+    { "name": "Clima - Cidade inexistente (404)", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/clima/XyzNaoExisteCidade" } },
+    { "name": "Clima - Nome invalido (400)", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/clima/X" } },
+    { "name": "Cidades - CE", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/cidades/CE?limite=5" } },
+    { "name": "Cidades - UF invalida (400)", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/cidades/ceara" } },
+    { "name": "Cidades - UF inexistente (404)", "request": { "method": "GET", "url": "http://localhost:3000/api/v1/cidades/XX" } }
+  ]
+}
